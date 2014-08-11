@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+		<link rel="stylesheet" type="text/css" href="css/layout.css">
+		<title>Your New Application</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+		<style type="text/css">
+			/* Prevent copy paste for all elements except text fields */
+			*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
+			input, textarea  { -webkit-user-select:text; }
+		</style>
+		<script src="intelxdk.js"></script>
+		<script type="text/javascript">
+			/* Intel native bridge is available */
+			var onDeviceReady=function(){
+			//hide splash screen
+			intel.xdk.device.hideSplashScreen();
+			};
+			document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
+		</script>
+		<script type="application/javascript" src="js/jquery.min.js"></script>
+		<script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+		<script src="cordova.js"></script>
+		<script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+		<script type="application/javascript" src="js/sgdb.js"></script>
+		<script type="application/javascript" src="js/index.js"></script>
+		<script type="application/javascript" src="sidebar/js/jquery.event.move.js"></script>
+		<script type="application/javascript" src="sidebar/js/jquery.event.swipe.js"></script>
+		<script type="application/javascript" src="sidebar/js/sidebar.js"></script>
+		<script type="application/javascript" src="sidebar/js/swipe.js"></script>
+	</head>
+
+	<body>
+		<!-- content goes here-->
+		<div class="uwrap">
+			<div class="upage" id="mainpage">
+				<div class="upage-outer">
+					<div class="uib-header header-bg container-group inner-element uib_w_11 uib-header-fixed" data-uib="layout/header" data-ver="0">
+						<h2>My Books</h2>
+						<div class="widget-container wrapping-col single-centered"></div>
+						<div class="widget-container content-area horiz-area wrapping-col left"></div>
+						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+					</div>
+					<div class="upage-content" id="mainsub">
+
+						<form id="bookForm" class="grid grid-pad urow uib_row_3 row-height-3" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_3 col-0" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col center">
+
+									<div class="btn-group uib-bs-flex widget uib_w_1 d-margins" data-uib="twitter%20bootstrap/button_group" data-ver="0">
+										<button type="button" class="btn widget uib_w_2 btn-success" data-uib="twitter%20bootstrap/button" data-ver="0" id="btnNew"><i class="glyphicon glyphicon-plus button-icon-left" data-position="left"></i>New</button>
+										<button type="button" class="btn widget uib_w_3 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="0" id="btnList"><i class="glyphicon glyphicon-list button-icon-left" data-position="left"></i>List</button>
+										<button type="button" class="btn widget uib_w_4 btn-danger" data-uib="twitter%20bootstrap/button" data-ver="0" id="btnExit"><i class="glyphicon glyphicon-off button-icon-left" data-position="left"></i>Exit</button>
+									</div>
+
+									<div id="newBook" hidden="hidden" class="widget-container content-area vertical-col center">
+										<div class="table-thing widget uib_w_5 d-margins" data-uib="twitter%20bootstrap/input" data-ver="0">
+											<input id="author" class="wide-control form-control default input-lg" type="text" placeholder="Author">
+										</div>
+										<div class="table-thing widget uib_w_6 d-margins" data-uib="twitter%20bootstrap/input" data-ver="0">
+											<input id="book" class="wide-control form-control default input-lg" type="text" placeholder="Book">
+										</div>
+										<div class="table-thing widget uib_w_7 d-margins" data-uib="twitter%20bootstrap/input" data-ver="0">
+											<input id="editor" class="wide-control form-control default input-lg" type="text" placeholder="Editor">
+										</div>
+										<div class="table-thing widget uib_w_8 d-margins" data-uib="twitter%20bootstrap/input" data-ver="0">
+											<input id="pages" class="wide-control form-control default input-lg" type="number" placeholder="Pages">
+										</div>
+
+										<button id="btnSave" type="button" class="btn widget uib_w_9 d-margins btn-lg btn-primary" data-uib="twitter%20bootstrap/button" data-ver="0"><i class="glyphicon glyphicon-ok-sign button-icon-left" data-position="left"></i>Save</button>
+										<button id="btnCancel" type="button" class="btn widget uib_w_10 d-margins btn-lg btn-default" data-uib="twitter%20bootstrap/button" data-ver="0"><i class="glyphicon glyphicon-remove-sign button-icon-left" data-position="left"></i>Cancel</button>
+									</div>
+
+									<div id="bookList" hidden="hidden">
+									</div>
+
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<!-- /upage-content -->
+
+				</div>
+				<!-- /upage-outer -->
+
+			</div>
+			<!-- /upage -->
+
+		</div>
+		<!-- /uwrap -->
+	</body>
+
+</html>

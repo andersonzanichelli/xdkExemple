@@ -1,0 +1,7 @@
+table tbody tr.odd {
+    background: #fff;
+}
+
+table tbody tr.even {
+    background: #ccc;
+}
